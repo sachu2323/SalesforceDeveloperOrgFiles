@@ -1,0 +1,31 @@
+<apex:page standardController="Account">
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:pageBlock title="Account Details">
+    <apex:detail relatedList="false"/>
+    <apex:pageBlockSection columns="2" >
+        <apex:pageBlockSection title="Contact Details">
+            <apex:relatedList list="contacts"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Opportunity Details">
+            <apex:relatedList list="opportunities"/>
+        </apex:pageBlockSection>
+    </apex:pageBlockSection>
+    <b>Name:</b>{!Account.Name} <br></br>
+    <b>Industry:</b>{!Account.Industry} <br></br>
+    <b>Phone:</b>{!Account.Phone} <br></br>
+    <b>Type:</b>{!Account.Type} <br></br>
+  </apex:pageBlock>
+  <!-- End Default Content REMOVE THIS -->
+      <apex:form >
+        <apex:pageBlock title="Edit Account Details">
+            <apex:pageBlockSection >
+                <apex:inputField value="{!Account.Name}"/>
+                <apex:inputField value="{!Account.Industry}"/>
+                <apex:inputField value="{!Account.Phone}"/>
+                <apex:inputField value="{!Account.Type}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:commandButton value="Update" action="{!Save}"/>
+        <apex:commandLink value="Update Link" action="{!quicksave}"/>
+    </apex:form>
+</apex:page>

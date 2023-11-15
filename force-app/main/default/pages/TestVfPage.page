@@ -1,0 +1,23 @@
+<apex:page standardController="Account">
+   <h1>Hello World</h1>
+   <p> My first visual force page</p>
+   <h2>Session Details</h2>
+
+   <apex:pageBlock title="User Details">
+       <apex:pageBlockSection columns="2">
+            <h1>UserID: </h1>{! $User.ID }<br/>
+            <h1>Name: </h1> {!$User.FirstName} {!$User.LastName}<br/>
+            <h1>Session: </h1>{!$Api.Session_ID}<br/>
+            <h1>Username: </h1>{! $User.Username }
+             
+       </apex:pageBlockSection>
+   </apex:pageBlock>
+    
+   <apex:pageBlock title="Account Summary">
+        <apex:pageBlockSection >
+   <p>Account Name: {!Account.Name}</p>
+   <p>Phone Number: {!Account.Phone}</p>
+        </apex:pageBlockSection>
+   </apex:pageBlock>
+   
+</apex:page>

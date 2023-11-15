@@ -1,0 +1,4 @@
+<aura:component implements="force:lightningQuickAction" >
+	    <lightning:button label="Click Me" variant="brand"  />
+
+</aura:component>

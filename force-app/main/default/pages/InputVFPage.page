@@ -1,0 +1,9 @@
+<apex:page controller="AccountController">
+    <h2>Create New Account</h2>
+    <apex:form >
+        <p>Account Name: <apex:inputText value="{!newAccount.Name}"/></p>
+        <p>Phone: <apex:inputText value="{!newAccount.Phone}"/></p>
+        <p>Website: <apex:inputText value="{!newAccount.Website}"/></p>
+        <apex:commandButton value="Save" action="{!saveAccount}"/>
+    </apex:form>
+</apex:page>

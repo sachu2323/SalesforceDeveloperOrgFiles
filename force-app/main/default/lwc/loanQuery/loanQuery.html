@@ -1,0 +1,106 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-card title="Account Search">
+                <div class="slds-m-around_medium">
+                    <lightning-input label="Search Term" onchange={handleSearchTermChange}></lightning-input>
+                </div>
+                <template if:true={accounts}>
+                    <div class="slds-m-around_medium">
+                        <lightning-datatable data={accounts} columns={columns} key-field="Id"
+                            onrowaction={handleRowAction} row-class={getRowClass} onrowselection={handleRowSelection}
+                            class="custom-datatable"></lightning-datatable>
+                    </div>
+                </template>
+                <div class="slds-m-around_medium">
+                    <lightning-button label="Download Accounts as Excel" onclick={exportContactData}></lightning-button>
+                </div>
+            </lightning-card>
+            <template if:true={showDialog}>
+                <div class="modal">
+                    <p>Empty Cart</p>
+                    <!-- Add other content you want to show in the dialog box -->
+                </div>
+            </template>
+        </div>
+
+        <div class="slds-col slds-size_1-of-3">
+            <div>
+                <div class="slds-grid slds-align-top cartClass">
+                    <!-- Icon -->
+                    <div class="slds-col">
+                        <!-- <lightning-icon icon-name="utility:cart" size="medium"></lightning-icon> -->
+                        <span class="slds-badge slds-theme_error">{selectedRows.length}</span>
+                        <img src={torontoImage}>
+                        <p if:true={totalCost}>{totalCost}</p>
+                        <p if:false={totalCost}>$0.0</p>
+                    </div>
+                    <!-- Heading -->
+
+                </div>
+
+                <ul class="custom-list" if:true={selectedRows.length}>
+                    <template for:each={selectedRows} for:item="row">
+                        <li key={row.Id}>
+                            <p class="rowNameStyle">{row.Name}</p>
+                            Price: {row.Price__c}
+                            <div class="iconDiv">
+                                <lightning-icon class="mydeletebutton" icon-name="utility:delete"
+                                    alternative-text="Delete" title="Delete" onclick={handleDeleteItem} data-id={row.Id}
+                                    name="mydeletebutton">
+                                </lightning-icon>
+                            </div>
+                        </li>
+                    </template>
+                </ul>
+                <ul if:false={selectedRows.length}>
+                    <div class="emptyCart"><p>No items are in the cart</p></div>
+                </ul>
+                <div class="button-container" if:true={selectedRows.length}>
+
+                    <!-- <button class="left-button" >Left Button</button>
+            <button class="right-button">Right Button</button> -->
+                    <lightning-button variant="base" label="Clear cart" title="Looks like a link"
+                        onclick={ClearCartFunction} class="slds-m-left_x-small"></lightning-button>
+                    <lightning-button variant="brand" label="Go to cart" title="Primary action"
+                        onclick={GoToCartFunction} class="slds-m-left_x-small"></lightning-button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div if:true={displaySelectedRows.length}>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Industry</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={displaySelectedRows} for:item="record">
+                    <tr key={record.Id}>
+                        <td>{record.Name}</td>
+                        <td>{record.Industry}</td>
+                        <td>{record.Price__c}</td>
+                        <td>
+                            <!-- <lightning-icon class="mydeletebutton" icon-name="utility:delete" alternative-text="Delete"
+                                title="Delete" onclick={handleDeleteItem} data-id={row.Id} name="mydeletebutton">
+                            </lightning-icon> -->
+                            <lightning-icon class="mydeletebutton" icon-name="utility:delete"
+                                alternative-text="Add to Cart" onclick={handleDeleteItem2}></lightning-icon>
+                        </td>
+                    </tr>
+
+                </template>
+                
+
+                    
+                
+            </tbody>
+        </table>
+        <div class="tcost"><p class="pcost">Total Cost : {totalCost}</p></div>
+    </div>
+</template>

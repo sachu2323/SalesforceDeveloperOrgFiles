@@ -1,0 +1,156 @@
+.cartClass {
+    background-color: rgb(81, 136, 213);
+    border-radius: 10px 10px 0 0;
+    width: 50%;
+  }
+
+ 
+.custom-list {
+    list-style: none; 
+    padding: 0; 
+  }
+  
+  .custom-list li {
+    width: 50%;
+    border: 1px solid #ccc; 
+    background-color: #f7f1f1; 
+    padding: 5px; 
+    margin-bottom: -2px; 
+  }
+  
+  
+.custom-icon-border {
+    border: 2px solid black;
+    border-radius: 50%; 
+  }
+
+
+.slds-col.slds-size_1-of-3 {
+
+    padding: 8px;
+
+  }
+
+.testt {
+    color: blue !important;
+  }
+  
+
+.custom-icon-style {
+    /* background-color: chocolate;
+    color: red; */
+    /* fill: red; */
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    width: 50%;
+    border: 1px solid #d5d5de;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .left-button,
+  .right-button {
+    padding: 8px 16px;
+    cursor: pointer;
+    width: 50%;
+  }
+  
+  .left-button {
+    margin-right: 10px;
+  }
+  
+  .right-button {
+    
+    margin-left: 10px;
+  }
+
+  /* .mydeletebutton {
+    --sds-c-button-icon-brand-color-background: red;
+    --sds-c-button-icon-brand-color-border: red;
+} */
+
+/* Define default style for the icon */
+/* Adjust icon size and position */
+.mydeletebutton {
+  --sds-c-icon-color-foreground-default: #CB0015;
+}
+
+
+.selected-row .slds-button_icon {
+  --sds-c-icon-color-foreground-default: #CB0015;
+}
+
+
+.mydeletebutton.clicked {
+  --sds-c-icon-color-foreground-default: #3e3c3d;
+}
+
+/* Define clicked state style for the icon */
+
+
+.delbttn{
+  color: red ;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+th, td {
+  border: none;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #d8cccc;
+  color: rgb(0, 0, 0);
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.no-border {
+  border: none;
+}
+
+.iconDiv{
+  margin-left: 78%;
+    margin-top: -20%;
+}
+.rowNameStyle{
+  font-weight: bold;
+}
+.emptyCart{
+  width:50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:121px;
+  border: 1px solid #d5d5de;
+  border-radius: 0 0 10px 10px;
+}
+.tcost{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 61px;
+    border: 1px solid #d5d5de;
+}
+.pcost{
+  margin-right: 36%;
+}
+
+@media screen and (min-width: 406px) {
+  .pcost {
+    margin-right: 30%;
+  }
+}

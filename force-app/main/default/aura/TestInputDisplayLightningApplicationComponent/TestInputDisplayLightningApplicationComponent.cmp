@@ -1,0 +1,15 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<lightning:recordEditForm recordId="0012w00001LITiiAAH" objectApiName="Account">
+        <div class="slds-grid">
+            <div class="slds-col slds-size_2-of-3">
+                <lightning:inputField fieldName="Name"></lightning:inputField>
+                <lightning:inputField fieldName="Industry"></lightning:inputField>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <lightning:inputField fieldName="Phone"></lightning:inputField>
+                <lightning:inputField fieldName="Fax"></lightning:inputField>
+            </div>
+        </div>
+    </lightning:recordEditForm>
+    
+</aura:component>

@@ -1,0 +1,58 @@
+<template>
+    <div if:true={showCards} class="mainDiv">
+        <!-- It redirects to the Contact Support Page of community site -->
+        <a href="contactsupport">
+            <div class="card card-blue" >
+                <div class="card-hover-div card-hover-div1">
+                    
+                    <p   class = "pstyle" style="display:none">Please Click here to navigating to the Fire Department Page</p> 
+                <div  class="sub-card">
+                    <h2 class="card-heading card-heading1">Fire Department</h2>
+                </div>
+                <div class="imgdiv">
+                <img class="imagestyle" src={cardIcon} alt="imgg">
+            </div>
+                </div>
+
+
+            </div>
+        </a>
+        <a href="flowscreen">
+            <div  class="card card-light-blue" >
+                <div class="card-hover-div card-hover-div2">
+                    <p  class = "pstyle" style="display:none">Please Click here to navigating to the Make Payments Page</p>
+                <div class="sub-card">
+                    <h2 class="card-heading card-heading2">Make Payments</h2>
+                </div>
+            </div>
+            </div>
+        </a>
+
+        <a onclick={handleFlowButtonClick}>
+            <div class="card card-dark-blue" data-id="child1245">
+                <div class="card-hover-div1 card-hover-divid">
+                    <p  class = "pstyle" data-id="pid" style="display:none">Please Click here to navigating to the Facility and Development Department Page</p>
+                <div class="sub-card" data-id="child1">
+                    <h2 class="card-heading card-heading3">Facility and Development Department</h2>
+                </div>
+                </div>
+            </div>
+        </a>
+
+        <a>
+            <div class="card card-teal">
+                <div class="card-hover-div1 card-hover-divid" data-id="child12456">
+                    <p  class = "pstyle" data-id="pid" style="display:none">Please Click here to navigating to the Facility and Development Department Page</p>
+                <div class="sub-card" data-id="child1">
+                    <h2 class="card-heading card-heading4">Information</h2>
+                </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <br>
+    <!-- <button onclick={handleFlowButtonClick}>Start Flow</button> -->
+
+    <lightning-flow if:true={showFlow} flow-api-name='test_Card_Flow'>
+    </lightning-flow>
+</template>

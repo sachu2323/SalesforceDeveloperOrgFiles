@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Loan Search">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Search Term" onchange={handleSearchTermChange}></lightning-input>
+        </div>
+        <template if:true={loans}>
+            <div class="slds-m-around_medium">
+                <lightning-card title="Loan Information">
+                    <div class="slds-m-around_medium">
+                        <!-- <c-paginator page-number={pageNumber} page-size={products.data.pageSize}
+                            total-item-count={products.data.totalItemCount} onprevious={handlePreviousPage}
+                            onnext={handleNextPage}>
+                        </c-paginator> -->
+                        <lightning-datatable data={loans} columns={columns} key-field="Id"
+                            class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        </lightning-datatable>
+                    </div>
+                </lightning-card>
+            </div>
+        </template>
+    </lightning-card>
+</template>

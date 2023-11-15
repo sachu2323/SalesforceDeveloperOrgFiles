@@ -1,0 +1,10 @@
+<apex:page standardController="Account" recordSetVar="accounts">
+    <apex:pageBlock title="Account List">
+        <apex:repeat value="{!accounts}" var="acct">
+            <apex:outputLink value="{!URLFOR($Action.Account.View, acct.Id)}">{!acct.Name}</apex:outputLink>
+            <br/>
+            <li>Phone: {!acct.Phone}</li>
+            <hr/>
+        </apex:repeat>
+    </apex:pageBlock>
+</apex:page>
